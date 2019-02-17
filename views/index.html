@@ -1,0 +1,155 @@
+<html lang="en">
+  <head>
+	  <title> Eddie </title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ </head>
+
+ <body>
+
+    <div class="jumbotron">
+		<div class="text-center text-primary">
+  			<h1>Eddie</h1>
+  			<p> Question Answering Dialog Agent </p>
+		</div>
+
+	</div>
+
+   <br>
+
+   <div class="container">
+  		<div class="row">
+
+  			<div class="col-sm-12">
+            	<h3 class="text-primary"> Dialog Agent </h3>
+  				<p style="font-style: italic">Eddie can do small talk. Click on the microphone and ask questions like: How are you? Where do you live? Who created you? </p>
+  				<br>
+	  			<div class="row">
+	  				    <div class= "col-sm-2" id="userSpeak">
+	  				    	<i class="fas fa-microphone fa-10x" style="cursor: hand"></i>
+	  				    </div>
+
+	  				    <div class="col-sm-5">
+	  				    	<h3> You said: </h3>
+	  						<div id="user-speech">What you speak will appear here ....</div>
+	  				    </div>
+	  				    
+	  					<div class="col-sm-5">
+	  						<h3> Eddie replied: </h3>
+	  						<div id="bot-speech"> What eddie replied will appear here ....</div>
+	  					</div>
+  				</div>
+                <br>
+                
+  				<div class="row">
+  					<div class="col-sm-12">
+                        <h4> Technologies Used </h4>
+                        <p> <i> DialogFlow (Google's Commercial NLP API) , Web Speech API, Socket.io, Node.js, Javascript, Bootstrap </i> </p>
+  					</div>
+  				</div>
+
+  				<div class="row">
+  					<div class="col-sm-12">
+                        <h4> References </h4>
+                        <p> <i> <a href="https://www.smashingmagazine.com/2017/08/ai-chatbot-web-speech-api-node-js/">Tutorial </a> </i> </p>
+  					</div>
+  				</div>
+
+  			</div>
+        </div>
+   </div>
+   <br>
+   <br>
+   <div style="background-color: #eee">
+   	<div class="container">
+   		<br>
+   		<br>
+		 <div class="row">
+
+        	<div class="col-sm-12">
+  				<h3 class="text-primary"> Open Domain Question Answering </h3>
+  				<br>
+  				<div class="row">
+
+  					<div class="col-sm-12">
+  						<form>
+
+	  						<div class="row">
+	  							<div class="col-sm-6">
+	  								<div class="form-group">
+							    		<label for="exampleInputEmail1">Passage</label>
+							    		<textarea rows="4" class="form-control" id="passage" placeholder="Passage"> 
+							         </textarea>
+							        </div>
+	  							</div>
+
+	  							<div class="col-sm-6">
+	  								<div class="form-group">
+							    		<label for="exampleInputPassword1">Question</label>
+							    		<textarea type="textarea" rows="4" class="form-control" id="question" placeholder="Question"></textarea> 
+							  		</div>
+	  							</div>
+
+	  						</div>
+  		
+						    <div class="row">
+						    	<div class="col-sm-11">
+						    		<label> Answer </label>
+									<p id = "answer"></p>
+						    	</div>
+  								<div class="col-sm-1" style="float: right">
+  									<button type="button" class="btn btn-default" id="submitForm">Submit</button>
+  								</div>
+  							</div>
+
+						</form>
+
+                        
+						
+  					</div>
+  				</div>
+                <br>
+
+                <div class="row"> 
+                	<div class="col-sm-12">
+                    	<h4> How it works? </h4>
+                    	<p> <i> A question answering system has 3 components, namely <b> Query Processing, Document and passage retrieval and answer extraction </b>. The above work focuses primarily on using neural models for answer extraction from passages. I trained 1 basic (BIDAF) and 1 state of the art model (BERT) and exposed it as an API to be consumed by UI. Both the models were trained for on GCP (deep learning image) for over 15 hours. BERT currently beats human performance on Squad dataset." </i> </p>
+  					</div>
+                </div>
+
+  				<div class="row">
+  					<div class="col-sm-12">
+                        <h4> Technologies Used </h4>
+                        <p> <i> Pytorch (BIDAF), Tensorflow (BERT), Flask, Python, Google Cloud Platform </i> </p>
+  					</div>
+  				</div>
+
+  				<div class="row">
+  					<div class="col-sm-12">
+                        <h4> References </h4>
+                        <p> <i> <a href="https://github.com/google-research/bert"> BERT Code </a>, 
+                        	<a href="https://web.stanford.edu/class/cs224n/project/main.pdf?forcedefault=true"> BIDAF Code </a> </i> </p>
+  					</div>
+  				</div>
+
+  				<br>
+  				<br>
+
+  			</div>  
+
+        </div>
+   </div>
+  </div>
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+
+</html>
